@@ -19,9 +19,9 @@ import {
   CadastroPjComponent
 } from './components';
 
-import { CadastroPjService } from "./services";
-
 import { SharedModule } from "../../shared/shared.module";
+
+import { CadastroPjService } from "./services";
 
 @NgModule({
   imports: [

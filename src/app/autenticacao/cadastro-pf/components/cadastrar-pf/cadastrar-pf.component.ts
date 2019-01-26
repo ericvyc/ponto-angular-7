@@ -9,6 +9,7 @@ import {
 } from "../../../../shared/validators";
 
 import { CadastroPf } from "../../models";
+import { CadastrarPfService } from "../../services";
 
 @Component({
   selector: 'app-cadastrar-pf',
@@ -22,7 +23,8 @@ export class CadastrarPfComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private cadastrarPfService: CadastrarPfService
   ) { }
 
   ngOnInit() {
@@ -45,7 +47,23 @@ export class CadastrarPfComponent implements OnInit {
     }
 
     const cadastroPf: CadastroPf = this.form.value;
-    alert(JSON.stringify(cadastroPf));
+    this.cadastrarPfService.cadastrar(cadastroPf)
+      .subscribe(
+        data => {
+          console.log(JSON.stringify(data));
+          const msg: string = "Realize o login para acessar o sistema";
+          this.snackBar.open(msg, "Sucesso", { duration : 5000});
+          this.router.navigate(['/login']);
+        },
+        err => {
+          console.log(JSON.stringify(err));
+          let msg: string = "Tente novamente emnstantes";
+          if (err.status == 400) {
+            msg = err.error.errors.join(' ');
+          }
+          this.snackBar.open(msg, "Erro", { duration : 5000});
+        }
+      );
 
     return false;
   }

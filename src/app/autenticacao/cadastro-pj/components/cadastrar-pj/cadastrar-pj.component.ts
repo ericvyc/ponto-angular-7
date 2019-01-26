@@ -3,9 +3,12 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material";
 import { Router } from "@angular/router";
 
-import { CadastroPj } from "../../models";
-import { CpfValidator, CnpjValidator } from "../../../../shared/validators";
+import {
+  CpfValidator,
+  CnpjValidator
+} from "../../../../shared/validators";
 
+import { CadastroPj } from "../../models";
 import { CadastroPjService } from "../../services";
 
 @Component({
