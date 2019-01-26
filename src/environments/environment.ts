@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseUrl:    'https://pontoevyc.herokuapp.com/',
-  baseApiUrl: 'https://pontoevyc.herokuapp.com/'
+  baseApiUrl: 'https://pontoevyc.herokuapp.com/api/'
   // baseUrl:    'http://localhost:8080/',
   // baseApiUrl: 'http://localhost:8080/api/'
 };
