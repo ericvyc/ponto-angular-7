@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from "./services";
 
 import {
   MatInputModule,
@@ -33,7 +34,10 @@ import { LoginComponent, LogarComponent } from './components';
   ],
   declarations: [
     LoginComponent,
-    LogarComponent
+    LogarComponent,
+  ],
+  providers: [
+    LoginService
   ]
 })
 export class LoginModule { }
