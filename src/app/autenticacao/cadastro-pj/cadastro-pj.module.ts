@@ -19,6 +19,8 @@ import {
   CadastroPjComponent
 } from './components';
 
+import { SharedModule } from "../../shared/shared.module";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import {
     MatListModule,
     MatTooltipModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    SharedModule
   ],
   declarations: [
     CadastrarPjComponent,
