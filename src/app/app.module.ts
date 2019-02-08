@@ -28,7 +28,8 @@ import {
 } from "./funcionario";
 
 import {
-  AdminModule
+  AdminModule,
+  AdminRoutingModule
 } from "./admin";
 
 @NgModule({
@@ -50,6 +51,7 @@ import {
     FuncionarioModule,
     FuncionarioRoutingModule,
     AdminModule,
+    AdminRoutingModule,
 
     //Modulo raiz das rotas deve ser o ultimo
     AppRoutingModule
